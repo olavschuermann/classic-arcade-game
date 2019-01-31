@@ -2,8 +2,12 @@
 
 ## Table of Contents
 
+- [About](#about)
 - [Instructions](#instructions)
 - [Contributing](#contributing)
+
+## About
+The **Classic Arcade Game Clone Project** is part of of the Udacity Nanodegree Program **Front-End Web Developer**. Every student has to complete the task on their own. I created the first version of the project in January 2019.
 
 ## Instructions
 
