@@ -15,6 +15,10 @@ var Enemy = function(x, y, speed) {
     // this.height = '80';
 };
 
+// Initialize player score
+let score = 0;
+let showScore = document.getElementById('score');
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -39,6 +43,12 @@ Enemy.prototype.update = function(dt) {
         && this.y < player.y + 80
         && this.y + 80 > player.y) {
         console.log('Gotcha!');
+
+        // Score -5 when players touches the enemy, not less than zero
+        if (score > 0) {
+            score -= 5;
+            showScore.innerHTML = `Your score: ${score}`;
+        }
 
         // Reset Player
         player.x = '350';
@@ -102,6 +112,10 @@ class Player {
 
         // Player on field?
         if (this.y < 30) {
+            // Score +10 when players reaches the water
+            score += 10;
+            showScore.innerHTML = `Your score: ${score}`;
+            // console.log('Score: ' + score); 
             this.x = '350';
             this.y = '420';      
         } else if (this.y > 435) {
